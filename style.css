@@ -308,6 +308,29 @@ body {
     color: #333;
 }
 
+.section-main-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    color: #1a365d;
+    text-align: center;
+    margin-bottom: 60px;
+    letter-spacing: 0.15rem;
+    text-transform: uppercase;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.section-main-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 2px;
+    background: #1a365d;
+}
+
 .tutorial-container {
     max-width: 1200px;
     margin: 0 auto;
@@ -363,21 +386,7 @@ body {
     justify-content: center;
 }
 
-.tiktok-embed-container {
-    width: 100%;
-    max-width: 340px;
-    /* Largura padrão de celular */
-    aspect-ratio: 9/16;
-    background: rgba(0, 0, 0, 0.05);
-    border-radius: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.5);
-    overflow: hidden;
-    position: relative;
-}
+
 
 .tiktok-placeholder-text {
     color: #718096;
@@ -461,8 +470,7 @@ body {
     }
 
     .tutorial-video {
-        order: -1;
-        /* Vídeo aparece primeiro no mobile */
+        /* Ordem natural: texto primeiro, vídeo depois */
     }
 
     .tutorial-text {
