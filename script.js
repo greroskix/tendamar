@@ -1,6 +1,4 @@
-window.addEventListener("load", () => {
-    const box = document.querySelector(".caixaMensagem");
-
-    // animação da caixa
-    box.classList.add("show");
+document.addEventListener("DOMContentLoaded", () => {
+    const card = document.querySelector(".caixa-mensagem");
+    if (card) requestAnimationFrame(() => card.classList.add("show"));
 });

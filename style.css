@@ -1,24 +1,30 @@
-* {
+:root {
+    --bg: #f2e9dc;
+    --text: #333;
+    --text-light: #666;
+    --text-muted: #555;
+    --card-bg: rgba(199, 219, 248, 0.75);
+    --card-border: rgba(255, 255, 255, 0.4);
+    --footer-bg: #1f1f1f;
+    --footer-text: #ccc;
+    --link-hover: rgb(146, 188, 243);
+}
+
+*, *::before, *::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', sans-serif;
 }
 
-html, body {
-    height: 100%;
-}
-
-/* ESTRUTURA PRINCIPAL */
 body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    background: #f2e9dc;
-    color: #333;
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Segoe UI', sans-serif;
 }
 
-/* BANNER */
 .banner {
     width: 100%;
     height: 70vh;
@@ -42,54 +48,67 @@ body {
     pointer-events: none;
 }
 
-/* CONTAINER CENTRAL */
 .container {
     flex: 1;
     display: flex;
     justify-content: center;
-    align-items: flex-start; /* sobe o card um pouco */
+    align-items: flex-start;
     padding: 20px;
-    margin-top: -60px; /* leve sobreposição, sem quebrar */
+    margin-top: -60px;
+    position: relative;
+    z-index: 1;
 }
 
-/* CARD */
-.caixaMensagem {
-    background: rgba(199, 219, 248, 0.75);
+.caixa-mensagem {
+    background: var(--card-bg);
     backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
     border-radius: 20px;
     padding: 40px;
     max-width: 600px;
     width: 100%;
     text-align: center;
     box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-    border: 1px solid rgba(255,255,255,0.4);
+    border: 1px solid var(--card-border);
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
-/* TEXTOS */
+.caixa-mensagem.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 .subtitle {
-    font-size: 14px;
-    color: #666;
+    font-size: 0.875rem;
+    color: var(--text-light);
     margin-bottom: 15px;
+    line-height: 1.6;
 }
 
 .mensagem {
-    font-size: 18px;
+    font-size: 1.125rem;
     font-weight: 500;
     margin-bottom: 10px;
+    line-height: 1.5;
+    border: none;
+    quotes: none;
 }
 
 .versiculo {
-    font-size: 14px;
-    color: #555;
+    font-size: 0.875rem;
+    color: var(--text-muted);
     font-style: italic;
+    display: block;
+    margin-top: 5px;
 }
 
-/* FOOTER */
 .footer {
-    background: #1f1f1f;
-    color: #ccc;
+    background: var(--footer-bg);
+    color: var(--footer-text);
     padding: 30px 20px;
-    margin-top: 100px;
+    margin-top: auto;
 }
 
 .footer-container {
@@ -98,24 +117,25 @@ body {
     max-width: 1100px;
     margin: 0 auto;
     flex-wrap: wrap;
+    gap: 20px;
 }
 
 .footer-left,
 .footer-center {
     flex: 1;
     min-width: 250px;
-    margin: 10px;
 }
 
 .logo {
     color: #fff;
-    font-size: 20px;
+    font-size: 1.25rem;
     margin-bottom: 10px;
 }
 
 .footer p {
-    font-size: 14px;
+    font-size: 0.875rem;
     margin-top: 10px;
+    line-height: 1.5;
 }
 
 .footer-center h3 {
@@ -124,16 +144,16 @@ body {
 }
 
 .arroba {
-    color: #ccc;
+    color: var(--footer-text);
     text-decoration: none;
+    transition: color 0.3s ease;
 }
+
 .arroba:hover {
-    color: rgb(146, 188, 243);
+    color: var(--link-hover);
 }
 
-/* MOBILE */
 @media (max-width: 768px) {
-
     .banner {
         height: auto;
         max-height: none;
@@ -141,7 +161,6 @@ body {
     }
 
     .banner-img {
-        width: 100%;
         height: auto;
         object-fit: contain;
     }
@@ -151,17 +170,17 @@ body {
         padding: 16px;
     }
 
-    .caixaMensagem {
+    .caixa-mensagem {
         padding: 22px;
         max-width: 98%;
     }
 
     .mensagem {
-        font-size: 16px;
+        font-size: 1rem;
     }
 
     .versiculo {
-        font-size: 13px;
+        font-size: 0.8125rem;
     }
 
     .footer-container {
