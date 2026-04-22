@@ -277,34 +277,26 @@ body {
     transform: translateY(0);
 }
 
-/* WAVE DIVIDER */
-.wave-divider {
-    position: relative;
+
+
+
+
+/* FADE OUT DO VÍDEO */
+.hero-bottom-fade {
+    position: absolute;
+    bottom: 0;
+    left: 0;
     width: 100%;
-    overflow: hidden;
-    line-height: 0;
-    background: var(--bg);
-    /* Cor da areia */
-}
-
-.wave-divider svg {
-    position: relative;
-    display: block;
-    width: calc(100% + 1.3px);
-    height: 60px;
-    background: #e8f1f5;
-    /* Cor da seção tutorial */
-}
-
-.wave-divider .shape-fill {
-    fill: var(--bg);
-    /* Preenche a onda com a cor da areia */
+    height: 180px;
+    background: linear-gradient(to bottom, transparent, var(--bg));
+    z-index: 10;
+    pointer-events: none; /* Para não bloquear cliques */
 }
 
 /* TUTORIAL SECTION */
 .tutorial-section {
-    background: linear-gradient(to bottom, #e8f1f5 0%, #f7f9fa 100%);
-    padding: 60px 20px 100px 20px;
+    background: linear-gradient(to bottom, var(--bg) 0%, #e8f1f5 35%, #f7f9fa 100%);
+    padding: 20px 20px 100px 20px;
     color: #333;
 }
 
@@ -469,10 +461,6 @@ body {
         gap: 40px;
     }
 
-    .tutorial-video {
-        /* Ordem natural: texto primeiro, vídeo depois */
-    }
-
     .tutorial-text {
         padding: 30px 20px;
     }
@@ -517,12 +505,23 @@ body {
     .footer-container {
         flex-direction: column;
         text-align: center;
-        gap: 40px;
+        gap: 50px;
     }
 
     .logo,
     .footer-center h3 {
         justify-content: center;
+    }
+
+    .footer-center {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .footer-center p {
+        margin-top: 5px;
     }
 }
 
