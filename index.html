@@ -9,7 +9,9 @@
     <link rel="icon" href="assets/img/logo.png" type="image/png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -17,9 +19,9 @@
 
     <header class="luxury-header">
         <div class="luxury-header-content">
-            <button class="luxury-btn">teste1</button>
+            <a href="#tutorial" class="luxury-btn" style="text-decoration:none;">TUTORIAL</a>
             <img src="assets/img/logo.png" alt="Logo Tenda Mar" class="luxury-logo">
-            <button class="luxury-btn">teste2</button>
+            <a href="#footer" class="luxury-btn" style="text-decoration:none;">CONTATO</a>
         </div>
     </header>
 
@@ -43,7 +45,59 @@
         </article>
     </section>
 
-    <footer class="footer">
+    <!-- Transição de Onda em SVG -->
+    <div class="wave-divider">
+        <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path
+                d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
+                class="shape-fill"></path>
+        </svg>
+    </div>
+
+    <section id="tutorial" class="tutorial-section">
+        <div class="tutorial-container reveal-on-scroll">
+
+            <div class="tutorial-text">
+                <h2 class="tutorial-title">Como Montar sua Tenda</h2>
+                <ul class="tutorial-steps">
+                    <li>
+                        <svg class="step-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <polyline points="12 16 16 12 12 8"></polyline>
+                            <line x1="8" y1="12" x2="16" y2="12"></line>
+                        </svg>
+                        <span>Estenda a lona sobre a areia.</span>
+                    </li>
+                    <li>
+                        <svg class="step-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <polyline points="12 16 16 12 12 8"></polyline>
+                            <line x1="8" y1="12" x2="16" y2="12"></line>
+                        </svg>
+                        <span>Preencha as âncoras (sacos) com areia até o limite.</span>
+                    </li>
+                    <li>
+                        <svg class="step-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <polyline points="12 16 16 12 12 8"></polyline>
+                            <line x1="8" y1="12" x2="16" y2="12"></line>
+                        </svg>
+                        <span>Estique bem a lona formando um "X" e encaixe os mastros frontais.</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="tutorial-video">
+                <!-- TikTok Embed Placeholder -->
+                <div class="tiktok-embed-container">
+                    <p class="tiktok-placeholder-text">Substitua este espaço pelo Embed do TikTok</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer id="footer" class="footer">
         <div class="footer-container">
             <div class="footer-left">
                 <h2 class="logo">

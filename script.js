@@ -35,4 +35,20 @@ document.addEventListener("DOMContentLoaded", () => {
             video.style.display = "none";
         });
     }
+
+    // Observer para animações de scroll (Tutorial, etc)
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target); // Animar apenas uma vez
+            }
+        });
+    }, {
+        threshold: 0.15
+    });
+
+    document.querySelectorAll('.reveal-on-scroll').forEach(el => {
+        observer.observe(el);
+    });
 });
