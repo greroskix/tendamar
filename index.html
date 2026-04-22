@@ -1,47 +1,70 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Tenda Mar — tendas leves e criativas para seus melhores momentos ao sol.">
     <title>Tenda Mar</title>
     <link rel="icon" href="assets/img/logo.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-    <section class="hero"></section>
-
-    <main class="container">
+    <section class="hero" id="hero">
+        <video class="hero-video" autoplay muted loop playsinline disablePictureInPicture
+            controlslist="nodownload noplaybackrate" poster="assets/img/bc.jpg">
+            <source src="assets/video/bc_video.mp4" type="video/mp4">
+        </video>
+        <div class="hero-overlay"></div>
         <article class="caixa-mensagem" id="mensagem-card">
-            <p class="subtitle">
-                Em meio à correria da vida, todos precisamos parar um pouco.
+            <p class="subtitle reveal-line">
+                Em meio à correria da vida, todos precisamos parar um pouco.<br>
                 Que este espaço seja um refúgio de paz, leveza e renovação.
             </p>
-            <blockquote class="mensagem">
+            <blockquote class="mensagem reveal-line">
                 "Vinde a mim todos os que estão cansados e sobrecarregados, e eu vos aliviarei."
             </blockquote>
-            <cite class="versiculo">Mateus 11:28</cite>
+            <cite class="versiculo reveal-line"><a href="https://www.bibliaon.com/versiculo/mateus_11_28/"
+                    target="_blank" rel="noopener noreferrer" class="versiculo-link">Mateus 11:28</a></cite>
         </article>
-    </main>
+    </section>
 
     <footer class="footer">
         <div class="footer-container">
             <div class="footer-left">
-                <h2 class="logo">TENDA MAR</h2>
-                <p>
-                    Somos uma marca criativa e apaixonada pelo verão, que desenvolve tendas leves,
-                    fáceis de montar e feitas para acompanhar você em cada momento ao sol.
-                </p>
+                <h2 class="logo">
+                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M3 21l9-18 9 18H3z" />
+                        <line x1="12" y1="9" x2="12" y2="15" />
+                    </svg>
+                    TENDA MAR
+                </h2>
+                <p>Somos uma marca criativa e apaixonada pelo verão, que desenvolve tendas leves, fáceis de montar e
+                    feitas para acompanhar você em cada momento ao sol.</p>
             </div>
             <div class="footer-center">
-                <h3>CONTATO</h3>
-                <p>tendasmar@gmail.com</p>
-                <p><a href="https://www.instagram.com/_tendamar" target="_blank" rel="noopener noreferrer" class="arroba">@_tendamar</a></p>
+                <h3>
+                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="2" y="4" width="20" height="16" rx="2" />
+                        <polyline points="22,4 12,13 2,4" />
+                    </svg>
+                    CONTATO
+                </h3>
+                <p><a href="mailto:tendasmar@gmail.com" class="footer-link">tendasmar@gmail.com</a></p>
+                <p><a href="https://www.instagram.com/_tendamar" target="_blank" rel="noopener noreferrer"
+                        class="footer-link">@_tendamar</a></p>
             </div>
         </div>
     </footer>
 
     <script src="script.js"></script>
 </body>
+
 </html>
