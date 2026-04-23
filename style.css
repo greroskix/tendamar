@@ -1,6 +1,5 @@
 :root {
     --bg: #FDF5E6;
-    /* Cor da areia clara e limpa */
     --card-glow: rgba(255, 255, 255, 0.06);
     --text: #fff;
     --text-sub: rgba(255, 255, 255, 0.85);
@@ -9,9 +8,7 @@
     --link-hover: #7ec8e3;
 }
 
-*,
-*::before,
-*::after {
+*, *::before, *::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -30,10 +27,13 @@ body {
     overflow-x: hidden;
 }
 
-/* LUXURY HEADER */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
 .luxury-header {
     position: fixed;
-    /* Fixed for scroll effect */
     top: 0;
     left: 0;
     width: 100%;
@@ -47,8 +47,6 @@ body {
     background: rgba(0, 0, 0, 0.4);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
-    box-shadow: none;
-    /* Sombra removida para evitar aspecto sujo */
 }
 
 .luxury-header-content {
@@ -56,7 +54,6 @@ body {
     align-items: center;
     justify-content: center;
     gap: 30px;
-    /* Closer like satellites */
     max-width: 1200px;
     margin: 0 auto;
 }
@@ -76,6 +73,7 @@ body {
     border-radius: 4px;
     outline: none;
     user-select: none;
+    text-decoration: none;
 }
 
 .luxury-btn:hover {
@@ -93,14 +91,8 @@ body {
     transition: all 0.1s ease;
 }
 
-.luxury-btn:focus-visible {
-    border-color: rgba(255, 255, 255, 0.5);
-    background: rgba(255, 255, 255, 0.1);
-}
-
 .luxury-logo {
     height: 85px;
-    /* Logo maior conforme solicitado */
     width: auto;
     filter: brightness(0) invert(1);
     transition: transform 0.4s ease;
@@ -110,14 +102,12 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    text-decoration: none;
 }
 
 .luxury-logo:hover {
     transform: scale(1.05);
 }
 
-/* HERO — tela inteira */
 .hero {
     position: relative;
     width: 100%;
@@ -136,7 +126,6 @@ body {
     left: 0;
     width: 100%;
     height: 120%;
-    /* Extra space for parallax */
     object-fit: cover;
     z-index: 0;
     pointer-events: none;
@@ -146,13 +135,11 @@ body {
 .hero-overlay {
     position: absolute;
     inset: 0;
-    /* Gradiente para escurecer apenas o topo, mantendo a base clara para a transição */
     background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0%, transparent 70%);
     z-index: 1;
     pointer-events: none;
 }
 
-/* HERO TITLE */
 .hero-title {
     position: relative;
     z-index: 2;
@@ -161,11 +148,8 @@ body {
     font-weight: 500;
     letter-spacing: 0.5rem;
     text-align: center;
-    margin: 0;
-    margin-top: 80px;
-    /* Space from header */
+    margin: 80px 0 0 0;
     text-transform: uppercase;
-    /* Subtle gradient like sun on water */
     background: linear-gradient(to bottom right, #ffffff, #e0eaf5);
     background-clip: text;
     -webkit-background-clip: text;
@@ -174,36 +158,23 @@ body {
     filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.3));
 }
 
-/* CARD — glassmorphism branco */
 .caixa-mensagem {
     position: relative;
     z-index: 2;
     background: rgba(255, 255, 255, 0.08);
-    /* Mais transparente */
     backdrop-filter: blur(15px) saturate(1.4);
     -webkit-backdrop-filter: blur(15px) saturate(1.4);
     border-radius: 20px;
     padding: 50px 40px;
-    /* Mais respiro */
     max-width: 600px;
     width: 90%;
     text-align: center;
     box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
-    /* Sombra mais ampla e suave */
     border: 1px solid rgba(255, 255, 255, 0.1);
-    /* Borda quase invisível */
     margin-top: 50px;
-
-    /* Fade In e Deslize + Float */
     opacity: 0;
     transform: translateY(40px);
     animation: cardEntrance 1.5s cubic-bezier(0.16, 1, 0.3, 1) forwards, float 6s ease-in-out infinite 1.5s;
-}
-
-.caixa-mensagem:hover {
-    box-shadow:
-        0 8px 40px rgba(0, 0, 0, 0.18),
-        0 0 50px var(--card-glow);
 }
 
 @keyframes cardEntrance {
@@ -214,18 +185,10 @@ body {
 }
 
 @keyframes float {
-
-    0%,
-    100% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(-8px);
-    }
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
 }
 
-/* TEXTOS */
 .subtitle {
     font-size: 0.9rem;
     font-weight: 300;
@@ -240,11 +203,7 @@ body {
     font-weight: 400;
     color: var(--text);
     margin: 0;
-    padding: 0;
     line-height: 1.6;
-    border: none;
-    outline: none;
-    quotes: none;
     letter-spacing: 0.03em;
     font-style: italic;
 }
@@ -252,30 +211,24 @@ body {
 .versiculo {
     font-size: 0.85rem;
     color: #fff;
-    /* Usando branco para herdar opacidade */
     opacity: 0.8;
-    /* Opacidade reduzida */
     font-style: italic;
     font-weight: 300;
     display: block;
     margin-top: 24px;
-    /* Mais respiro */
     letter-spacing: 0.05em;
 }
 
 .versiculo-link {
     color: inherit;
-    text-decoration: none;
-    border-bottom: 1px solid transparent;
-    transition: color 0.3s ease, border-color 0.3s ease;
+    transition: all 0.3s ease;
 }
 
 .versiculo-link:hover {
     color: var(--text);
-    border-bottom-color: rgba(255, 255, 255, 0.4);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.4);
 }
 
-/* REVEAL */
 .reveal-line {
     opacity: 0;
     transform: translateY(20px);
@@ -287,76 +240,36 @@ body {
     transform: translateY(0);
 }
 
-.reveal-on-scroll {
-    opacity: 0;
-    transform: translateY(40px);
-    transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1), transform 1s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.reveal-on-scroll.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-
-
-
-
-/* ORGANIC ANIMATED WAVES */
 .hero-waves-container {
     position: absolute;
     bottom: -1px;
     left: 0;
     width: 100vw;
     height: 100px;
-    min-height: 80px;
     z-index: 10;
     line-height: 0;
     overflow: hidden;
 }
 
 .waves {
-    position: relative;
     width: 100%;
     height: 100%;
 }
 
-/* Wave Animation */
 .parallax>use {
     animation: move-forever 25s cubic-bezier(.55, .5, .45, .5) infinite;
 }
 
-.parallax>use:nth-child(1) {
-    animation-delay: -2s;
-    animation-duration: 7s;
-}
-
-.parallax>use:nth-child(2) {
-    animation-delay: -3s;
-    animation-duration: 10s;
-}
-
-.parallax>use:nth-child(3) {
-    animation-delay: -4s;
-    animation-duration: 13s;
-}
-
-.parallax>use:nth-child(4) {
-    animation-delay: -5s;
-    animation-duration: 20s;
-}
+.parallax>use:nth-child(1) { animation-delay: -2s; animation-duration: 7s; }
+.parallax>use:nth-child(2) { animation-delay: -3s; animation-duration: 10s; }
+.parallax>use:nth-child(3) { animation-delay: -4s; animation-duration: 13s; }
+.parallax>use:nth-child(4) { animation-delay: -5s; animation-duration: 20s; }
 
 @keyframes move-forever {
-    0% {
-        transform: translate3d(-90px, 0, 0);
-    }
-
-    100% {
-        transform: translate3d(85px, 0, 0);
-    }
+    0% { transform: translate3d(-90px, 0, 0); }
+    100% { transform: translate3d(85px, 0, 0); }
 }
 
-/* TUTORIAL SECTION REFINEMENT */
 .tutorial-section {
     padding: 120px 20px;
     background: linear-gradient(180deg, rgba(253, 245, 230, 0) 0%, rgba(224, 234, 245, 0.5) 100%);
@@ -409,7 +322,6 @@ body {
     display: flex;
     flex-direction: column;
     gap: 30px;
-    align-items: stretch;
 }
 
 .step-card {
@@ -424,7 +336,6 @@ body {
     gap: 25px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
     transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-    cursor: default;
 }
 
 .step-card:hover {
@@ -465,14 +376,12 @@ body {
     color: #1a365d;
     border-radius: 20px;
     transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-    box-shadow: inset 0 0 15px rgba(255, 255, 255, 0.5);
 }
 
 .step-card:hover .step-icon {
     background: #1a365d;
     color: #fff;
     transform: rotate(5deg) scale(1.05);
-    box-shadow: 0 10px 20px rgba(26, 54, 93, 0.2);
 }
 
 .step-content h4 {
@@ -488,7 +397,6 @@ body {
     line-height: 1.5;
 }
 
-/* CTA REFINEMENT */
 .cta-container {
     margin-top: 40px;
     text-align: center;
@@ -511,18 +419,15 @@ body {
     font-size: 1rem !important;
     border-radius: 50px !important;
     box-shadow: 0 15px 35px rgba(26, 54, 93, 0.2) !important;
-    text-decoration: none;
     display: inline-flex;
     align-items: center;
     gap: 12px;
-    transition: all 0.4s ease;
 }
 
 .tiktok-cta:hover {
     transform: translateY(-5px) !important;
     box-shadow: 0 20px 45px rgba(26, 54, 93, 0.3) !important;
     background: #000 !important;
-    /* TikTok Black on hover */
 }
 
 .tiktok-icon {
@@ -530,43 +435,28 @@ body {
     height: 20px;
 }
 
-/* REVEAL ANIMATIONS */
 .reveal-on-scroll {
     opacity: 0;
-    transform: translateY(60px);
-    transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1),
-        transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+    transform: translateY(60px) scale(0.95);
+    transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1), 
+                transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
     will-change: transform, opacity;
 }
 
 .reveal-on-scroll.visible {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateY(0) scale(1);
 }
 
-/* Staggered Reveals */
-.stagger-1.visible {
-    transition-delay: 0.1s;
-}
+.stagger-1.visible { transition-delay: 0.1s; }
+.stagger-2.visible { transition-delay: 0.25s; }
+.stagger-3.visible { transition-delay: 0.4s; }
+.stagger-4.visible { transition-delay: 0.55s; }
 
-.stagger-2.visible {
-    transition-delay: 0.25s;
-}
-
-.stagger-3.visible {
-    transition-delay: 0.4s;
-}
-
-.stagger-4.visible {
-    transition-delay: 0.55s;
-}
-
-/* Floating effect for the button when visible */
 .cta-container.visible .tiktok-cta {
     animation: ctaFloat 4s ease-in-out infinite 1.5s;
 }
 
-/* Subtle pulse for cards when visible */
 .step-card.visible {
     animation: cardEntranceGlow 2s ease-out forwards;
 }
@@ -582,41 +472,6 @@ body {
     50% { transform: translateY(-10px); }
 }
 
-/* RESPONSIVE TUTORIAL */
-@media (max-width: 480px) {
-    .section-title {
-        font-size: 2.2rem;
-        letter-spacing: 0.15rem;
-    }
-
-    .section-subtitle {
-        font-size: 1rem;
-    }
-
-    .step-card {
-        flex-direction: column;
-        text-align: center;
-        padding: 40px 20px;
-    }
-
-    .step-icon-wrapper {
-        margin-bottom: 15px;
-    }
-
-    .step-number-glass {
-        left: 50%;
-        transform: translateX(-50%);
-        top: -15px;
-    }
-
-    .step-card:hover {
-        transform: translateY(-10px);
-    }
-}
-
-
-
-/* FOOTER REFINEMENT */
 .footer {
     background: #0a0a0a;
     color: #fff;
@@ -633,8 +488,7 @@ body {
     flex-wrap: wrap;
 }
 
-.footer-brand,
-.footer-contact {
+.footer-brand, .footer-contact {
     flex: 1;
     min-width: 280px;
 }
@@ -658,30 +512,25 @@ body {
     font-weight: 700;
     letter-spacing: 0.2rem;
     text-transform: uppercase;
-    color: #fff;
 }
 
 .footer-brand p {
     font-size: 0.9rem;
     line-height: 1.6;
     color: rgba(255, 255, 255, 0.6);
-    max-width: 450px;
 }
 
 .footer-contact h3 {
-    font-family: 'Inter', sans-serif;
     font-size: 0.9rem;
     font-weight: 600;
     letter-spacing: 0.1rem;
     margin-bottom: 25px;
-    color: #fff;
 }
 
 .contact-links {
     display: flex;
     flex-direction: column;
     gap: 15px;
-    margin-bottom: 25px;
 }
 
 .footer-link {
@@ -689,7 +538,6 @@ body {
     align-items: center;
     gap: 10px;
     color: rgba(255, 255, 255, 0.6);
-    text-decoration: none;
     font-size: 0.95rem;
     transition: all 0.4s ease;
 }
@@ -715,195 +563,35 @@ body {
 .footer-bottom-content p {
     font-size: 0.8rem;
     color: rgba(255, 255, 255, 0.4);
-    margin-bottom: 6px;
     letter-spacing: 0.05rem;
-}
-
-.footer-bottom a {
-    color: rgba(255, 255, 255, 0.6);
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-.footer-bottom a:hover {
-    color: #fff;
+    margin: 0;
 }
 
 .credits {
     font-size: 0.75rem !important;
     opacity: 0.7;
+    margin-top: 5px;
 }
 
-/* RESPONSIVE */
+.credits a {
+    color: var(--link-hover);
+    text-decoration: none;
+}
+
 @media (max-width: 768px) {
-    .hero-waves-container {
-        height: 40px;
-        min-height: 40px;
-    }
-
-    .tutorial-section {
-        padding: 80px 20px 120px 20px;
-        /* Aumenta padding no mobile */
-    }
-
-    .section-main-title {
-        font-size: 2.2rem;
-        /* Título levemente menor */
-        margin-bottom: 40px;
-    }
-
-    .tutorial-container {
-        grid-template-columns: 1fr;
-        gap: 50px;
-    }
-
-    .tutorial-card {
-        padding: 40px 25px;
-        border-radius: 30px;
-    }
-
-    .tutorial-title {
-        font-size: 2rem;
-        text-align: center;
-    }
-
-    .tutorial-steps li {
-        font-size: 1.1rem;
-        gap: 15px;
-    }
-
-    .step-num {
-        width: 35px;
-        height: 35px;
-        font-size: 1rem;
-    }
-
-    .phone-frame {
-        max-width: 320px;
-        border-width: 6px;
-    }
-
-    .caixa-mensagem {
-        padding: 28px 22px;
-        border-radius: 16px;
-    }
-
-    .subtitle {
-        font-size: 0.82rem;
-    }
-
-    .hero-title {
-        font-size: 2.8rem;
-        letter-spacing: 0.3rem;
-        margin-top: 100px;
-    }
-
-    .caixa-mensagem {
-        padding: 40px 24px;
-        border-radius: 20px;
-        width: 85%;
-        backdrop-filter: blur(15px) saturate(1.4);
-    }
-
-    .subtitle {
-        font-size: 0.85rem;
-        margin-bottom: 24px;
-    }
-
-    .mensagem {
-        font-size: 1.1rem;
-        line-height: 1.5;
-    }
-
-    .versiculo {
-        font-size: 0.85rem;
-        margin-top: 20px;
-    }
-
-    .footer {
-        padding: 80px 20px 40px 20px;
-        text-align: center;
-    }
-
-    .footer-container {
-        flex-direction: column;
-        align-items: center;
-        gap: 50px;
-    }
-
-    .footer-logo-container {
-        justify-content: center;
-    }
-
-    .contact-links {
-        align-items: center;
-    }
-
-    .footer-link:hover {
-        transform: none;
-    }
+    .hero-waves-container { height: 40px; }
+    .tutorial-section { padding: 80px 20px 100px 20px; }
+    .footer-container { flex-direction: column; align-items: center; text-align: center; }
+    .footer-logo-container, .contact-links { justify-content: center; align-items: center; }
 }
 
 @media (max-width: 480px) {
-    .tutorial-title {
-        font-size: 2rem;
-    }
-
-    .hero {
-        height: 100svh;
-        width: 100vw;
-        margin: 0;
-        padding: 0;
-    }
-
-    .hero-video {
-        width: 100vw;
-        height: 100svh;
-        left: 0;
-        top: 0;
-        object-fit: cover;
-    }
-
-    .hero-title {
-        font-size: 2.2rem;
-        letter-spacing: 0.2rem;
-        margin-top: 90px;
-    }
-
-    .caixa-mensagem {
-        padding: 40px 20px;
-        width: 88%;
-        max-width: 340px;
-        margin-top: 30px;
-    }
-
-    .subtitle {
-        font-size: 0.8rem;
-    }
-
-    .mensagem {
-        font-size: 1.05rem;
-    }
-
-    /* HEADER MOBILE REFINEMENT (3-ITEM LAYOUT) */
-    .luxury-header {
-        padding: 15px 10px;
-    }
-
-    .luxury-header-content {
-        gap: 20px;
-        justify-content: center;
-    }
-
-    .luxury-logo {
-        height: 65px;
-        /* Aumentado para melhor visibilidade */
-    }
-
-    .luxury-btn {
-        font-size: 0.8rem;
-        /* Aumentado levemente */
-        padding: 6px 8px;
-        letter-spacing: 0.05em;
-    }
+    .section-title { font-size: 2.2rem; letter-spacing: 0.15rem; }
+    .hero { height: 100svh; }
+    .hero-title { font-size: 2.2rem; margin-top: 90px; }
+    .caixa-mensagem { padding: 40px 20px; width: 88%; margin-top: 30px; }
+    .luxury-logo { height: 65px; }
+    .luxury-btn { font-size: 0.8rem; padding: 6px 8px; }
+    .step-card { flex-direction: column; text-align: center; padding: 40px 20px; }
+    .step-number-glass { left: 50%; transform: translateX(-50%); top: -15px; }
 }
