@@ -1,11 +1,9 @@
 :root {
-    --bg: #FDF5E6; /* Cor da areia clara e limpa */
-    --card-bg: rgba(255, 255, 255, 0.2);
-    --card-border: rgba(255, 255, 255, 0.3);
+    --bg: #FDF5E6;
+    /* Cor da areia clara e limpa */
     --card-glow: rgba(255, 255, 255, 0.06);
     --text: #fff;
     --text-sub: rgba(255, 255, 255, 0.85);
-    --text-muted: rgba(255, 255, 255, 0.65);
     --footer-bg: #111;
     --footer-text: #999;
     --link-hover: #7ec8e3;
@@ -48,7 +46,8 @@ body {
     background: rgba(0, 0, 0, 0.4);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
-    box-shadow: none; /* Sombra removida para evitar aspecto sujo */
+    box-shadow: none;
+    /* Sombra removida para evitar aspecto sujo */
 }
 
 .luxury-header-content {
@@ -91,6 +90,13 @@ body {
     width: auto;
     filter: brightness(0) invert(1);
     transition: transform 0.4s ease;
+}
+
+.logo-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
 }
 
 .luxury-logo:hover {
@@ -284,7 +290,8 @@ body {
 
 .hero-wave {
     position: absolute;
-    bottom: -1px; /* Evita gap inferior */
+    bottom: -1px;
+    /* Evita gap inferior */
     left: 0;
     width: 100vw;
     overflow: hidden;
@@ -350,7 +357,8 @@ body {
     border: none;
     border-radius: 20px;
     padding: 40px;
-    box-shadow: none; /* Sombra removida para limpeza total */
+    box-shadow: none;
+    /* Sombra removida para limpeza total */
 }
 
 .tutorial-title {
@@ -391,15 +399,7 @@ body {
 
 
 
-.tiktok-placeholder-text {
-    color: #718096;
-    text-align: center;
-    padding: 20px;
-    font-size: 0.9rem;
-    font-weight: 500;
-}
-
-/* FOOTER — compacto */
+/* FOOTER */
 .footer {
     background: var(--footer-bg);
     color: var(--footer-text);
