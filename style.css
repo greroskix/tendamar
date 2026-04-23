@@ -322,30 +322,38 @@ body {
 }
 
 /* Wave Animation */
-.parallax > use {
-    animation: move-forever 25s cubic-bezier(.55,.5,.45,.5) infinite;
+.parallax>use {
+    animation: move-forever 25s cubic-bezier(.55, .5, .45, .5) infinite;
 }
 
-.parallax > use:nth-child(1) {
+.parallax>use:nth-child(1) {
     animation-delay: -2s;
     animation-duration: 7s;
 }
-.parallax > use:nth-child(2) {
+
+.parallax>use:nth-child(2) {
     animation-delay: -3s;
     animation-duration: 10s;
 }
-.parallax > use:nth-child(3) {
+
+.parallax>use:nth-child(3) {
     animation-delay: -4s;
     animation-duration: 13s;
 }
-.parallax > use:nth-child(4) {
+
+.parallax>use:nth-child(4) {
     animation-delay: -5s;
     animation-duration: 20s;
 }
 
 @keyframes move-forever {
-    0% { transform: translate3d(-90px, 0, 0); }
-    100% { transform: translate3d(85px, 0, 0); }
+    0% {
+        transform: translate3d(-90px, 0, 0);
+    }
+
+    100% {
+        transform: translate3d(85px, 0, 0);
+    }
 }
 
 /* TUTORIAL SECTION REFINEMENT */
@@ -513,7 +521,8 @@ body {
 .tiktok-cta:hover {
     transform: translateY(-5px) !important;
     box-shadow: 0 20px 45px rgba(26, 54, 93, 0.3) !important;
-    background: #000 !important; /* TikTok Black on hover */
+    background: #000 !important;
+    /* TikTok Black on hover */
 }
 
 .tiktok-icon {
@@ -525,8 +534,8 @@ body {
 .reveal-on-scroll {
     opacity: 0;
     transform: translateY(60px);
-    transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1), 
-                transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+    transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1),
+        transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
     will-change: transform, opacity;
 }
 
@@ -536,14 +545,36 @@ body {
 }
 
 /* Staggered Reveals */
-.stagger-1.visible { transition-delay: 0.1s; }
-.stagger-2.visible { transition-delay: 0.25s; }
-.stagger-3.visible { transition-delay: 0.4s; }
-.stagger-4.visible { transition-delay: 0.55s; }
+.stagger-1.visible {
+    transition-delay: 0.1s;
+}
+
+.stagger-2.visible {
+    transition-delay: 0.25s;
+}
+
+.stagger-3.visible {
+    transition-delay: 0.4s;
+}
+
+.stagger-4.visible {
+    transition-delay: 0.55s;
+}
 
 /* Floating effect for the button when visible */
 .cta-container.visible .tiktok-cta {
     animation: ctaFloat 4s ease-in-out infinite 1.5s;
+}
+
+/* Subtle pulse for cards when visible */
+.step-card.visible {
+    animation: cardEntranceGlow 2s ease-out forwards;
+}
+
+@keyframes cardEntranceGlow {
+    0% { box-shadow: 0 0 0 rgba(26, 54, 93, 0); }
+    50% { box-shadow: 0 10px 30px rgba(26, 54, 93, 0.1); }
+    100% { box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03); }
 }
 
 @keyframes ctaFloat {
@@ -567,17 +598,17 @@ body {
         text-align: center;
         padding: 40px 20px;
     }
-    
+
     .step-icon-wrapper {
         margin-bottom: 15px;
     }
-    
+
     .step-number-glass {
         left: 50%;
         transform: translateX(-50%);
         top: -15px;
     }
-    
+
     .step-card:hover {
         transform: translateY(-10px);
     }
@@ -602,7 +633,8 @@ body {
     flex-wrap: wrap;
 }
 
-.footer-brand, .footer-contact {
+.footer-brand,
+.footer-contact {
     flex: 1;
     min-width: 280px;
 }
@@ -792,17 +824,17 @@ body {
         padding: 80px 20px 40px 20px;
         text-align: center;
     }
-    
+
     .footer-container {
         flex-direction: column;
         align-items: center;
         gap: 50px;
     }
-    
+
     .footer-logo-container {
         justify-content: center;
     }
-    
+
     .contact-links {
         align-items: center;
     }
