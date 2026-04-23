@@ -524,8 +524,10 @@ body {
 /* REVEAL ANIMATIONS */
 .reveal-on-scroll {
     opacity: 0;
-    transform: translateY(30px);
-    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    transform: translateY(60px);
+    transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1), 
+                transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: transform, opacity;
 }
 
 .reveal-on-scroll.visible {
@@ -535,9 +537,19 @@ body {
 
 /* Staggered Reveals */
 .stagger-1.visible { transition-delay: 0.1s; }
-.stagger-2.visible { transition-delay: 0.2s; }
-.stagger-3.visible { transition-delay: 0.3s; }
-.stagger-4.visible { transition-delay: 0.4s; }
+.stagger-2.visible { transition-delay: 0.25s; }
+.stagger-3.visible { transition-delay: 0.4s; }
+.stagger-4.visible { transition-delay: 0.55s; }
+
+/* Floating effect for the button when visible */
+.cta-container.visible .tiktok-cta {
+    animation: ctaFloat 4s ease-in-out infinite 1.5s;
+}
+
+@keyframes ctaFloat {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
 
 /* RESPONSIVE TUTORIAL */
 @media (max-width: 480px) {
