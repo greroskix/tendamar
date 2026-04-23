@@ -288,114 +288,185 @@ body {
 
 
 
-.hero-wave {
+/* ORGANIC ANIMATED WAVES */
+.hero-waves-container {
     position: absolute;
     bottom: -1px;
-    /* Evita gap inferior */
     left: 0;
     width: 100vw;
-    overflow: hidden;
-    line-height: 0;
+    height: 100px;
+    min-height: 80px;
     z-index: 10;
+    line-height: 0;
+    overflow: hidden;
 }
 
-.hero-wave svg {
+.waves {
     position: relative;
-    display: block;
     width: 100%;
-    height: 80px;
-    /* Altura ajustada */
+    height: 100%;
 }
 
-.hero-wave .shape-fill {
-    fill: var(--bg);
+/* Wave Animation */
+.parallax > use {
+    animation: move-forever 25s cubic-bezier(.55,.5,.45,.5) infinite;
 }
 
-/* TUTORIAL SECTION */
+.parallax > use:nth-child(1) {
+    animation-delay: -2s;
+    animation-duration: 7s;
+}
+.parallax > use:nth-child(2) {
+    animation-delay: -3s;
+    animation-duration: 10s;
+}
+.parallax > use:nth-child(3) {
+    animation-delay: -4s;
+    animation-duration: 13s;
+}
+.parallax > use:nth-child(4) {
+    animation-delay: -5s;
+    animation-duration: 20s;
+}
+
+@keyframes move-forever {
+    0% { transform: translate3d(-90px, 0, 0); }
+    100% { transform: translate3d(85px, 0, 0); }
+}
+
+/* TUTORIAL SECTION REFINEMENT */
 .tutorial-section {
     background: linear-gradient(to bottom, var(--bg) 0%, #e8f1f5 35%, #f7f9fa 100%);
-    padding: 60px 20px 100px 20px;
+    padding: 120px 20px;
     color: #333;
+    overflow: hidden;
 }
 
 .section-main-title {
     font-family: 'Playfair Display', serif;
-    font-size: 3rem;
+    font-size: 3.5rem;
     color: #1a365d;
     text-align: center;
-    margin-bottom: 60px;
-    letter-spacing: 0.15rem;
+    margin-bottom: 80px;
+    letter-spacing: 0.2rem;
     text-transform: uppercase;
     position: relative;
-    padding-bottom: 15px;
-}
-
-.section-main-title::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 60px;
-    height: 2px;
-    background: #1a365d;
 }
 
 .tutorial-container {
     max-width: 1200px;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1.2fr 0.8fr;
     gap: 60px;
     align-items: center;
 }
 
-.tutorial-text {
-    background: rgba(255, 255, 255, 0.3);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border: none;
-    border-radius: 20px;
-    padding: 40px;
-    box-shadow: none;
-    /* Sombra removida para limpeza total */
+/* Glassmorphism Card */
+.tutorial-card {
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 40px;
+    padding: 60px;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.05);
 }
 
 .tutorial-title {
     font-family: 'Playfair Display', serif;
     font-size: 2.5rem;
     color: #1a365d;
-    /* Tom de azul marinho profundo */
-    margin-bottom: 30px;
+    margin-bottom: 40px;
 }
 
 .tutorial-steps {
     list-style: none;
     padding: 0;
+    margin-bottom: 45px;
 }
 
 .tutorial-steps li {
     display: flex;
-    align-items: flex-start;
-    gap: 15px;
-    margin-bottom: 20px;
-    font-size: 1.1rem;
+    align-items: center;
+    gap: 25px;
+    margin-bottom: 35px;
+    font-size: 1.2rem;
+    color: #2d3748;
     line-height: 1.5;
-    color: #4a5568;
 }
 
-.step-icon {
+.step-num {
     flex-shrink: 0;
-    width: 24px;
-    height: 24px;
-    color: #2b6cb0;
-    margin-top: 3px;
+    width: 45px;
+    height: 45px;
+    background: #1a365d;
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 1.2rem;
+    box-shadow: 0 0 20px rgba(26, 54, 93, 0.2);
+    transition: all 0.4s ease;
 }
 
-.tutorial-video {
+.tutorial-steps li:hover .step-num {
+    transform: scale(1.15);
+    box-shadow: 0 0 30px rgba(26, 54, 93, 0.4);
+    background: #2b6cb0;
+}
+
+/* Smartphone Frame */
+.video-frame-container {
     display: flex;
     justify-content: center;
 }
+
+.phone-frame {
+    width: 100%;
+    max-width: 380px;
+    background: #fff;
+    padding: 12px;
+    border-radius: 45px;
+    box-shadow: 0 40px 80px rgba(0, 0, 0, 0.15);
+    border: 10px solid #111;
+    position: relative;
+    overflow: hidden;
+}
+
+/* CTA */
+.tutorial-cta {
+    background: #1a365d !important;
+    color: #fff !important;
+    border: none;
+    display: inline-block;
+    padding: 14px 32px;
+    font-size: 0.9rem;
+}
+
+.tutorial-cta:hover {
+    background: #2b6cb0 !important;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(26, 54, 93, 0.3);
+}
+
+/* Stagger Animation */
+.stagger-item {
+    opacity: 0;
+    transform: translateY(25px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.tutorial-card.visible .stagger-item {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.stagger-item:nth-child(1) { transition-delay: 0.2s; }
+.stagger-item:nth-child(2) { transition-delay: 0.4s; }
+.stagger-item:nth-child(3) { transition-delay: 0.6s; }
 
 
 
@@ -467,6 +538,11 @@ body {
 
 /* RESPONSIVE */
 @media (max-width: 768px) {
+    .hero-waves-container {
+        height: 40px;
+        min-height: 40px;
+    }
+
     .tutorial-section {
         padding: 80px 20px 120px 20px;
         /* Aumenta padding no mobile */
@@ -480,21 +556,33 @@ body {
 
     .tutorial-container {
         grid-template-columns: 1fr;
-        gap: 40px;
+        gap: 50px;
     }
 
-    .tutorial-text {
-        padding: 30px 20px;
+    .tutorial-card {
+        padding: 40px 25px;
+        border-radius: 30px;
+    }
+
+    .tutorial-title {
+        font-size: 2rem;
         text-align: center;
-        /* Centraliza conteúdo do cartão */
-        display: flex;
-        flex-direction: column;
-        align-items: center;
     }
 
     .tutorial-steps li {
-        text-align: left;
-        /* Mantém os passos alinhados à esquerda para leitura */
+        font-size: 1.1rem;
+        gap: 15px;
+    }
+
+    .step-num {
+        width: 35px;
+        height: 35px;
+        font-size: 1rem;
+    }
+
+    .phone-frame {
+        max-width: 320px;
+        border-width: 6px;
     }
 
     .caixa-mensagem {
@@ -602,15 +690,20 @@ body {
     .luxury-header {
         padding: 15px 10px;
     }
+
     .luxury-header-content {
         gap: 20px;
         justify-content: center;
     }
+
     .luxury-logo {
-        height: 65px; /* Aumentado para melhor visibilidade */
+        height: 65px;
+        /* Aumentado para melhor visibilidade */
     }
+
     .luxury-btn {
-        font-size: 0.8rem; /* Aumentado levemente */
+        font-size: 0.8rem;
+        /* Aumentado levemente */
         padding: 6px 8px;
         letter-spacing: 0.05em;
     }

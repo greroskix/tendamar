@@ -48,67 +48,60 @@
             <cite class="versiculo reveal-line"><a href="https://www.bibliaon.com/versiculo/mateus_11_28/"
                     target="_blank" rel="noopener noreferrer" class="versiculo-link">Mateus 11:28</a></cite>
         </article>
-        <!-- Divisor de Seção em Onda (Wave) -->
-        <div class="hero-wave">
-            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"
-                preserveAspectRatio="none">
-                <path
-                    d="M0,46.29V120H1200V52.47c-87,66.76-210.51,27.47-313.55-6.67-34.6,11.5-68.3,23.34-104.45,29.34-71.1,11.8-140.13,4.92-209.4-13.08-70.66-18.38-144.36-39.62-218.2-35.26-70.47,4.19-136.44,32.13-206.8,37.5-54.41,4.17-110.21-5.8-158-28Z"
-                    class="shape-fill"></path>
+        <!-- Divisor de Seção em Onda Animada (Organic Waves) -->
+        <div class="hero-waves-container">
+            <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+                <defs>
+                    <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+                </defs>
+                <g class="parallax">
+                    <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(255, 255, 255, 0.4)" />
+                    <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(126, 200, 227, 0.3)" />
+                    <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(79, 209, 197, 0.2)" />
+                    <use xlink:href="#gentle-wave" x="48" y="7" fill="var(--bg)" />
+                </g>
             </svg>
         </div>
     </section>
 
     <section id="tutorial" class="tutorial-section">
         <h2 class="section-main-title reveal-on-scroll">TUTORIAL</h2>
-        <div class="tutorial-container reveal-on-scroll">
-
-            <div class="tutorial-text">
-                <h2 class="tutorial-title">Como Montar sua Tenda</h2>
+        
+        <div class="tutorial-container">
+            <!-- Card de Instruções Glassmorphism -->
+            <div class="tutorial-card reveal-on-scroll">
+                <h3 class="tutorial-title">Como Montar sua Tenda</h3>
                 <ul class="tutorial-steps">
-                    <li>
-                        <svg class="step-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <circle cx="12" cy="12" r="10"></circle>
-                            <polyline points="12 16 16 12 12 8"></polyline>
-                            <line x1="8" y1="12" x2="16" y2="12"></line>
-                        </svg>
-                        <span>Estenda a lona sobre a areia.</span>
+                    <li class="stagger-item">
+                        <div class="step-num">1</div>
+                        <p>Estenda a lona sobre a areia de forma plana.</p>
                     </li>
-                    <li>
-                        <svg class="step-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <circle cx="12" cy="12" r="10"></circle>
-                            <polyline points="12 16 16 12 12 8"></polyline>
-                            <line x1="8" y1="12" x2="16" y2="12"></line>
-                        </svg>
-                        <span>Preencha as âncoras (sacos) com areia até o limite.</span>
+                    <li class="stagger-item">
+                        <div class="step-num">2</div>
+                        <p>Preencha as âncoras (sacos) com areia até o limite máximo.</p>
                     </li>
-                    <li>
-                        <svg class="step-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <circle cx="12" cy="12" r="10"></circle>
-                            <polyline points="12 16 16 12 12 8"></polyline>
-                            <line x1="8" y1="12" x2="16" y2="12"></line>
-                        </svg>
-                        <span>Estique bem a lona formando um "X" e encaixe os mastros frontais.</span>
+                    <li class="stagger-item">
+                        <div class="step-num">3</div>
+                        <p>Estique bem a lona formando um "X" e encaixe os mastros frontais para elevar a tenda.</p>
                     </li>
                 </ul>
+                <a href="#footer" class="luxury-btn tutorial-cta" style="text-decoration:none;">Dúvidas? Fale Conosco</a>
             </div>
 
-            <div class="tutorial-video">
-                <!-- TikTok Embed -->
-                <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@tendamar/video/7618362793275755783"
-                    data-video-id="7618362793275755783"
-                    style="max-width: 605px;min-width: 325px; border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.1);">
-                    <section> <a target="_blank" title="@tendamar"
-                            href="https://www.tiktok.com/@tendamar?refer=embed">@tendamar</a>
-                        <p>Tenda Praia portátil, companheira de suas viagem de carro, moto, avião ou qualquer outro meio
-                            de locomoção, ela é PORTÁTIL ;)</p> <a target="_blank" title="♬ som original - TendaMar"
-                            href="https://www.tiktok.com/music/som-original-7618362829220973319?refer=embed">♬ som
-                            original - TendaMar</a>
-                    </section>
-                </blockquote>
-                <script async src="https://www.tiktok.com/embed.js"></script>
+            <!-- Vídeo com Moldura de Smartphone -->
+            <div class="video-frame-container reveal-on-scroll">
+                <div class="phone-frame">
+                    <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@tendamar/video/7618362793275755783"
+                        data-video-id="7618362793275755783">
+                        <section> 
+                            <a target="_blank" title="@tendamar" href="https://www.tiktok.com/@tendamar?refer=embed">@tendamar</a>
+                            <p>Tenda Praia portátil...</p>
+                        </section>
+                    </blockquote>
+                    <script async src="https://www.tiktok.com/embed.js"></script>
+                </div>
             </div>
-
         </div>
     </section>
 
