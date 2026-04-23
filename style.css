@@ -597,4 +597,21 @@ body {
     .mensagem {
         font-size: 1.05rem;
     }
+
+    /* HEADER MOBILE REFINEMENT (3-ITEM LAYOUT) */
+    .luxury-header {
+        padding: 15px 10px;
+    }
+    .luxury-header-content {
+        gap: 20px;
+        justify-content: center;
+    }
+    .luxury-logo {
+        height: 65px; /* Aumentado para melhor visibilidade */
+    }
+    .luxury-btn {
+        font-size: 0.8rem; /* Aumentado levemente */
+        padding: 6px 8px;
+        letter-spacing: 0.05em;
+    }
 }
